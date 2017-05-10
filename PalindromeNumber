@@ -1,0 +1,18 @@
+/**9.判断一个数是不是回文数**/
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        if(x<0|| (x!=0 &&x%10==0))  return false;
+        //x小于0或者x是10的整数倍，不是回文
+        int sum =0;
+        while(x>sum)
+        {
+            sum = sum*10+x%10;
+            x=x/10;
+        }
+        return (x==sum)||(x==sum/10);//这是什么意思？？
+        //这是相当于sum在增加，x在减小，到中间时比较大小，
+        //x==sum是偶数位的情况，x==sum/10是奇数位的情况。
+        //我开始想的是把整个数逆序，比这样复杂。
+    }
+};
