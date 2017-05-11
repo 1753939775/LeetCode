@@ -1,0 +1,18 @@
+/**LeetCode第1题，找到一个数组中第几个和几个元素加起来是给出的数**/
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int i=0;
+        int j=1;
+        for(i=0;i<nums.size()-1;i++){
+            for(j=i+1;j<nums.size();j++)
+                if(nums[i]+nums[j]==target){
+                    vector<int>result;
+                    result.insert(result.begin(),i);
+                    result.insert(result.begin()+1,j);
+                    return result;
+                }
+        }
+        return nums;
+    }
+};
